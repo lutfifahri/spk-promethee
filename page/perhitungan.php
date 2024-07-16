@@ -203,8 +203,7 @@ if (!$_SESSION['id']) {
                                         echo '<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">';
                                         echo '<thead>';
                                         echo '<tr>';
-                                        echo '<th scope="col">Alternatif 1</th>';
-                                        echo '<th scope="col">Alternatif 2</th>';
+                                        echo '<th scope="col" colspan="2">Alternatif</th>';
                                         foreach ($kriteria as $k) {
                                             echo '<th scope="col">' . $k['nama'] . '</th>';
                                         }
