@@ -105,6 +105,7 @@ if (!$_SESSION['id']) {
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
+                                                    <th scope="col">Kode</th>
                                                     <th scope="col">Alternatif</th>
                                                     <?php
                                                     include('../config.php');
@@ -120,7 +121,7 @@ if (!$_SESSION['id']) {
                                                 <?php
                                                 // Koneksi Database
                                                 include('../config.php');
-                                                $query = mysqli_query($connection, "SELECT * FROM `alternatif`");
+                                                $query = mysqli_query($connection, "SELECT * FROM `alternatif`  ORDER BY id ASC");
                                                 while ($row = mysqli_fetch_array($query)) {
                                                     $id = $row['id'];
                                                     $kode = $row['kode'];
@@ -128,10 +129,11 @@ if (!$_SESSION['id']) {
 
                                                     // Mulai baris tabel untuk setiap alternatif
                                                     echo "<tr>";
+                                                    echo "<td>$kode</td>";
                                                     echo "<td>$nama</td>";
 
                                                     // Menampilkan nilai subkriteria dalam satu baris
-                                                    $query1 = mysqli_query($connection, "SELECT s.nama as sub FROM `subkriteria` s, `perhitungan` kp WHERE kp.idAlternatif='" . $id . "' AND s.idSubkriteria=kp.idSubkriteria ORDER BY kp.idKriteria");
+                                                    $query1 = mysqli_query($connection, "SELECT s.nama as sub FROM `subkriteria` s, `perhitungan` kp WHERE kp.idAlternatif='" . $id . "' AND s.idSubkriteria=kp.idSubkriteria ORDER BY kp.idAlternatif ASC");
                                                     while ($result2 = mysqli_fetch_array($query1)) {
                                                         echo "<td>{$result2['sub']}</td>";
                                                     }
