@@ -14,7 +14,6 @@
 
     <!-- Nav Item - Dashboard -->
     <?php
-    session_start();
 
     // Mendapatkan URL saat ini
     $current_page = basename($_SERVER['PHP_SELF']);
