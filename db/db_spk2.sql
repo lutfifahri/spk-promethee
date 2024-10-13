@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2024 at 06:58 PM
+-- Generation Time: Oct 13, 2024 at 09:15 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -37,12 +37,12 @@ CREATE TABLE `alternatif` (
 --
 
 INSERT INTO `alternatif` (`id`, `kode`, `nama`) VALUES
-(1, 'A1', 'TBS Ramp Budi Jaya'),
-(2, 'A2', 'TBS Ramp Tani Jaya'),
-(3, 'A3', 'TBS Bumdesa syariah usaha bersama'),
-(4, 'A4', 'TBS CV. Restu Bangun Persada'),
-(5, 'A5', 'TBS CV. Perwita Sari Abadi'),
-(6, 'A6', 'UD. Tani Berkah Bersama');
+(33, 'A2', 'TBS Ramp Tani Jaya'),
+(34, 'A3', 'TBS Bumdesa Syariah Usaha Bersama'),
+(35, 'A4', 'TBS CV Restu Bangun Persada'),
+(36, 'A5', 'TBS CV. Perwita Sari Abadi'),
+(37, 'A6', 'TBS UD. Tani Berkah Bersama'),
+(38, 'A1', 'TBS Ramp Budi Jaya');
 
 -- --------------------------------------------------------
 
@@ -61,12 +61,12 @@ CREATE TABLE `hasil` (
 --
 
 INSERT INTO `hasil` (`rangking`, `idAlternatif`, `bobot`) VALUES
-('1', 4, '0.36'),
-('2', 1, '0.04'),
-('3', 2, '0.04'),
-('4', 5, '0.04'),
-('5', 3, '-0.12'),
-('6', 6, '-0.36');
+('1', 35, '0.36'),
+('2', 36, '0.04'),
+('3', 38, '0.04'),
+('4', 33, '0.04'),
+('5', 34, '-0.12'),
+('6', 37, '-0.36');
 
 -- --------------------------------------------------------
 
@@ -108,36 +108,36 @@ CREATE TABLE `perhitungan` (
 --
 
 INSERT INTO `perhitungan` (`idAlternatif`, `idKriteria`, `idSubkriteria`) VALUES
-('1', '1', '1'),
-('1', '2', '3'),
-('1', '3', '2'),
-('1', '4', '3'),
-('1', '5', '2'),
-('2', '1', '2'),
-('2', '2', '4'),
-('2', '3', '2'),
-('2', '4', '1'),
-('2', '5', '2'),
-('3', '1', '2'),
-('3', '2', '4'),
-('3', '3', '2'),
-('3', '4', '3'),
-('3', '5', '1'),
-('4', '1', '3'),
-('4', '2', '2'),
-('4', '3', '1'),
-('4', '4', '2'),
-('4', '5', '1'),
-('5', '1', '4'),
-('5', '2', '1'),
-('5', '3', '2'),
-('5', '4', '1'),
-('5', '5', '3'),
-('6', '1', '1'),
-('6', '2', '4'),
-('6', '3', '3'),
-('6', '4', '2'),
-('6', '5', '5');
+('33', '1', '2'),
+('33', '2', '9'),
+('33', '3', '12'),
+('33', '4', '16'),
+('33', '5', '22'),
+('34', '1', '2'),
+('34', '2', '9'),
+('34', '3', '12'),
+('34', '4', '18'),
+('34', '5', '21'),
+('35', '1', '3'),
+('35', '2', '7'),
+('35', '3', '11'),
+('35', '4', '17'),
+('35', '5', '21'),
+('36', '1', '4'),
+('36', '2', '6'),
+('36', '3', '12'),
+('36', '4', '16'),
+('36', '5', '23'),
+('37', '1', '1'),
+('37', '2', '9'),
+('37', '3', '13'),
+('37', '4', '17'),
+('37', '5', '25'),
+('38', '1', '1'),
+('38', '2', '8'),
+('38', '3', '12'),
+('38', '4', '18'),
+('38', '5', '22');
 
 -- --------------------------------------------------------
 
@@ -191,6 +191,7 @@ INSERT INTO `subkriteria` (`idSubkriteria`, `idKriteria`, `nama`, `bobot`) VALUE
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `nama` char(50) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` varchar(1) NOT NULL,
@@ -201,9 +202,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `level`, `created_at`) VALUES
-(1, 'admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '1', '2024-07-10 17:00:00'),
-(2, 'superadmin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '2', '2024-07-10 17:00:00');
+INSERT INTO `users` (`id`, `nama`, `email`, `password`, `level`, `created_at`) VALUES
+(1, 'admin', 'admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '1', '2024-07-10 17:00:00'),
+(2, 'Super admin', 'superadmin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '2', '2024-07-10 17:00:00');
 
 --
 -- Indexes for dumped tables
@@ -242,7 +243,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `alternatif`
 --
 ALTER TABLE `alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `kriteria`
 --

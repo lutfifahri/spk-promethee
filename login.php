@@ -16,6 +16,7 @@ if ($num_row >= 1) {
     echo "success";
     $_SESSION['id']          = $row['id'];
     $_SESSION['email']       = $row['email'];
+    $_SESSION['nama']       = $row['nama'];
     $_SESSION['level']       = $row['level'];
 } else {
     echo "error";

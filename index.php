@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Aplikasi SPK</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,9 +18,21 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        /* Mengatur background dengan gambar */
+        body {
+            background-image: url('images/pks.jpg');
+            /* Ganti dengan path gambar yang sesuai */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
 </head>
 
-<body class="bg-gradient-primary">
+<body>
     <div class="container">
         <!-- Outer Row -->
         <br><br><br><br><br>
@@ -33,7 +45,7 @@
                             <div class="p-5">
                                 <div class="text-center">
                                     <h3 class="h4 text-gray-900 mb-2">Sistem Pemilihan TBS Layak Produksi </h3>
-                                    <span> PT ARYA RAMA PRAKRSA</span>
+                                    <span> PT ARYA RAMA PRAKRSA</span>
                                     <br><br>
                                 </div>
                                 <div class="form-group">
@@ -75,7 +87,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
 
     <script src="js/page/login.js"></script>
-
 
 </body>
 

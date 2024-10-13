@@ -27,10 +27,7 @@ $(document).ready(function () {
                         Swal.fire({
                                 type: 'success',
                                 title: 'Login Berhasil!',
-                                text: 'Anda akan di arahkan dalam 3 Detik',
-                                timer: 3000,
-                                showCancelButton: false,
-                                showConfirmButton: false
+                                text: 'Anda Berhasil Login',
                             })
                             .then(function () {
                                 window.location.href = "page/dashboard.php";
